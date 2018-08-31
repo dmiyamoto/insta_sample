@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Handson20180818</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'partial/navbar' if current_user %>
+    <% if flash.any? %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <%= render 'partial/footer' %>
+  </body>
+</html>
